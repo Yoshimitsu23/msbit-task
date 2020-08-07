@@ -5,9 +5,9 @@ function Nav() {
     return (
         <div className='container-fluid'>
             <div className='text-center'>
-                <h1 className='display-4'>msBit</h1>
+                <h1 className='display-4 bg-light'>Shop</h1>
             </div>
-            <input type='text' className='form-control col-lg-3' placeholder='Search' />
+            <input type='text' placeholder='Search products' className='form-control btn-outline-info' /><br />
         </div>
     );
 }

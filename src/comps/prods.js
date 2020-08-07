@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { doApiGet } from '../service/apiService';
-import ProdsItem from './prodsItem';
+import Items from './item';
 
 
-function Prods(props) {
+function Products(props) {
 
-    let [ prods_ar, setProds ] = useState([]);
+    let [ prod_arr, setProds ] = useState([]);
 
     useEffect(() => {
-        let url = "http://localhost:3000/valid"
+        let url = "http://localhost:3000/status1"
         doApiGet(url)
             .then(data => {
                 setProds(data)
-                console.log(data);
             })
     }, [])
 
     return (
         <div className="row">
-            {prods_ar.map(item => {
+            {prod_arr.map(item => {
                 return (
-                    <ProdsItem key={item.id} item={item} />
+                    <Items key={item.id} item={item} />
                 )
             })}
 
@@ -28,4 +27,4 @@ function Prods(props) {
     );
 }
 
-export default Prods;
+export default Products;
